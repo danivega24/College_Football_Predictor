@@ -70,8 +70,8 @@ def cfb3_setup(f13):
             data[team[2]][header[i]] = team[i]
     
     return(data, team_names)
-def main():
 
+def setup_all_data():
     all_data = {}
 
     f13 = 'cfb13.csv'
@@ -97,6 +97,11 @@ def main():
 
     all_data['21'] = cfb2_setup(f21)[0]
     all_data['22'] = cfb3_setup(f22)[0]
+    return all_data
+
+def main():
+
+    all_data = setup_all_data()
 
     #print(    "--------------- 2021 ---------------\n\n", all_data['21'])
     print("\n\n--------------- 2022 ---------------\n\n", all_data['22'])
